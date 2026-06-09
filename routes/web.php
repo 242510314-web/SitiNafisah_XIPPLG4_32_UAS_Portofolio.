@@ -2,24 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ContactController;
 
+// redirect ke login
 Route::get('/', function () {
     return redirect('/login');
 });
 
-// tampilkan login
+// =====================
+// LOGIN
+// =====================
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-
-// proses login
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.post');
 
-// dashboard sederhana setelah login
+// dashboard (harus login)
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
-
-// halaman lain
+// =====================
+// HALAMAN PORTFOLIO
+// =====================
 Route::get('/about', function () {
     return view('about');
 });
@@ -40,7 +43,15 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-// logout
+// =====================
+// CONTACT SYSTEM (KIRIM & LIHAT PESAN)
+// =====================
+Route::post('/contact/send', [ContactController::class, 'send']);
+Route::get('/inbox', [ContactController::class, 'inbox']);
+
+// =====================
+// LOGOUT
+// =====================
 Route::post('/logout', function () {
     auth()->logout();
     request()->session()->invalidate();
