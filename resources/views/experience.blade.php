@@ -62,7 +62,7 @@
                 </h3>
 
                 <span class="bg-sky-500 text-white px-3 py-1 rounded-full text-sm">
-                    2024
+                    2025
                 </span>
             </div>
 
@@ -99,7 +99,7 @@
                 </h3>
 
                 <span class="bg-sky-500 text-white px-3 py-1 rounded-full text-sm">
-                    2023
+                    2024
                 </span>
             </div>
 
