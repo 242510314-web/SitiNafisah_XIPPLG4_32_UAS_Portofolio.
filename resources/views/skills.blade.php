@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-sky-50">
+<!-- DEFAULT TERANG -->
+<body id="body" class="bg-sky-50 text-slate-700">
 
-<!-- SKILLS -->
 <section class="py-28">
 
 <div class="max-w-6xl mx-auto px-8">
 
-    <!-- Tombol Kembali -->
-    <a href="/dashboard"
-       class="inline-block mb-8 bg-sky-500 text-white px-5 py-2 rounded-lg shadow hover:bg-sky-600 transition">
-        ← Kembali
-    </a>
+    <!-- TOP BAR -->
+    <div class="flex justify-between items-center mb-8">
+
+        <a href="/dashboard"
+           class="bg-sky-500 text-white px-5 py-2 rounded-lg shadow hover:bg-sky-600 transition">
+            ← Kembali
+        </a>
+
+        <!-- TOGGLE -->
+        <button onclick="toggleMode()"
+            class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm">
+            🌙 / ☀️
+        </button>
+
+    </div>
 
     <h2 class="text-4xl font-bold text-center text-sky-700 mb-4">
         Skills
@@ -31,8 +42,8 @@
 
     <div class="grid md:grid-cols-2 gap-8">
 
-        <!-- HTML -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition">
+        <!-- CARD 1 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
             <div class="flex justify-between mb-2">
                 <h3 class="font-bold text-lg">🌐 HTML</h3>
                 <span class="text-sky-600 font-semibold">90%</span>
@@ -47,8 +58,8 @@
             </p>
         </div>
 
-        <!-- CSS -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition">
+        <!-- CARD 2 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
             <div class="flex justify-between mb-2">
                 <h3 class="font-bold text-lg">🎨 CSS</h3>
                 <span class="text-sky-600 font-semibold">85%</span>
@@ -63,8 +74,8 @@
             </p>
         </div>
 
-        <!-- Laravel -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition">
+        <!-- CARD 3 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
             <div class="flex justify-between mb-2">
                 <h3 class="font-bold text-lg">⚡ Laravel</h3>
                 <span class="text-sky-600 font-semibold">80%</span>
@@ -79,8 +90,8 @@
             </p>
         </div>
 
-        <!-- MySQL -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-2 transition">
+        <!-- CARD 4 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
             <div class="flex justify-between mb-2">
                 <h3 class="font-bold text-lg">🗄️ MySQL</h3>
                 <span class="text-sky-600 font-semibold">75%</span>
@@ -100,6 +111,19 @@
 </div>
 
 </section>
+
+<!-- TOGGLE SCRIPT (SAMA SEPERTI ABOUT) -->
+<script>
+function toggleMode() {
+    const body = document.getElementById("body");
+
+    body.classList.toggle("bg-sky-50");
+    body.classList.toggle("bg-slate-900");
+
+    body.classList.toggle("text-slate-700");
+    body.classList.toggle("text-white");
+}
+</script>
 
 </body>
 </html>

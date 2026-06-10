@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-sky-50">
+<!-- BODY -->
+<body id="body" class="bg-sky-50 text-slate-700">
 
 <!-- EXPERIENCE -->
-<section class="py-28 bg-white">
+<section class="py-28">
 
 <div class="max-w-5xl mx-auto px-8">
 
-    <!-- Tombol Kembali -->
-    <a href="/dashboard"
-       class="inline-block mb-8 bg-sky-500 text-white px-5 py-2 rounded-lg shadow hover:bg-sky-600 transition">
-        ← Kembali
-    </a>
+    <!-- TOP BAR -->
+    <div class="flex justify-between items-center mb-8">
+
+        <a href="/dashboard"
+           class="bg-sky-500 text-white px-5 py-2 rounded-lg shadow hover:bg-sky-600 transition">
+            ← Kembali
+        </a>
+
+        <!-- TOGGLE MODE -->
+        <button onclick="toggleMode()"
+            class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm">
+            🌙 / ☀️
+        </button>
+
+    </div>
 
     <h2 class="text-4xl font-bold text-center text-sky-700 mb-4">
         Experience
@@ -132,6 +143,19 @@
 </div>
 
 </section>
+
+<!-- SCRIPT DARK / LIGHT MODE -->
+<script>
+function toggleMode() {
+    const body = document.getElementById("body");
+
+    body.classList.toggle("bg-sky-50");
+    body.classList.toggle("bg-slate-900");
+
+    body.classList.toggle("text-slate-700");
+    body.classList.toggle("text-white");
+}
+</script>
 
 </body>
 </html>
