@@ -18,7 +18,7 @@ body {
 
 </head>
 
-<body class="bg-gradient-to-br from-sky-50 via-white to-sky-100 text-slate-700">
+<body id="body" class="bg-gradient-to-br from-sky-50 via-white to-sky-100 text-slate-700">
 
 <!-- NAVBAR -->
 <nav class="fixed top-0 left-0 w-full backdrop-blur-md bg-white/70 border-b border-sky-100 z-50 shadow-sm">
@@ -38,14 +38,25 @@ body {
             <li><a href="/contact" class="hover:text-sky-900">Contact</a></li>
         </ul>
 
-        <!-- LOGOUT -->
-        <form action="/logout" method="POST" class="inline">
-            @csrf
-            <button type="submit"
-                class="bg-sky-500 text-white px-4 py-2 rounded-full shadow hover:bg-sky-600 transition">
-                Logout
+        <!-- BUTTONS -->
+        <div class="flex items-center gap-3">
+
+            <!-- DARK MODE TOGGLE -->
+            <button onclick="toggleMode()"
+                class="bg-slate-800 text-white px-4 py-2 rounded-full text-sm hover:bg-slate-700">
+                🌙 / ☀️
             </button>
-        </form>
+
+            <!-- LOGOUT -->
+            <form action="/logout" method="POST" class="inline">
+                @csrf
+                <button type="submit"
+                    class="bg-sky-500 text-white px-4 py-2 rounded-full shadow hover:bg-sky-600 transition">
+                    Logout
+                </button>
+            </form>
+
+        </div>
 
     </div>
 
@@ -102,7 +113,7 @@ body {
         <div class="relative">
             <div class="absolute -inset-6 bg-sky-200 blur-2xl rounded-full opacity-50"></div>
 
-            <img src="{{ asset('images/foto.png') }}" 
+            <img src="{{ asset('images/foto.png') }}"
                  alt="Foto Siti Nafisah Al Azizah"
                  class="relative w-80 h-80 rounded-full border-8 border-white shadow-2xl">
         </div>
@@ -111,6 +122,18 @@ body {
 </div>
 
 </section>
+
+<!-- SCRIPT DARK MODE -->
+<script>
+function toggleMode() {
+    document.body.classList.toggle("bg-slate-900");
+    document.body.classList.toggle("text-white");
+    document.body.classList.toggle("bg-gradient-to-br");
+    document.body.classList.toggle("from-sky-50");
+    document.body.classList.toggle("via-white");
+    document.body.classList.toggle("to-sky-100");
+}
+</script>
 
 </body>
 </html>
